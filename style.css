@@ -44,3 +44,29 @@ code{background:#21262d;padding:1px 6px;border-radius:5px;font-size:.88em;color:
  .rail span{background:var(--ac);color:#000;font-weight:700;font-size:13px;border-radius:8px;min-width:28px;text-align:center;padding:2px 4px}
  .rail input{flex:1;width:28px;writing-mode:vertical-lr;accent-color:var(--ac);touch-action:none}
 }
+/* 1. Force code blocks to expand vertically and scroll cleanly */
+pre, pre code {
+  display: block !important;
+  white-space: pre !important;
+  overflow-x: auto !important;
+  max-height: none !important;
+  height: auto !important;
+}
+
+/* 2. Force every line wrapper inside the code block onto its own line */
+pre > span,
+pre > div,
+pre code > span,
+pre code > div,
+.line,
+.code-line {
+  display: block !important;
+  white-space: pre !important;
+}
+
+/* 3. Fix inline code in bullet points overflowing off the right edge */
+li code, p code {
+  display: inline !important;
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+}
